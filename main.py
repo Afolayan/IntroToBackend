@@ -3,7 +3,8 @@ import webapp2
 import jinja2
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
-jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir))
+jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
+                               autoescape=True)
 
 form = """
 <form>
@@ -45,10 +46,9 @@ class Handler(webapp2.RedirectHandler):
 
 class MainPage(Handler):
     def get(self):
-        n = self.request.get("n")
-        if n:
-            n = int(n)
-        self.render("shopping_list.html", name="jeff", n=n)
+        items = self.request.get_all("food")
+
+        self.render("shopping_list.html", items=items)
 
         # output = form
         # output_hidden = ""
