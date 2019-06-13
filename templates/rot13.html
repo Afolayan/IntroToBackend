@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ROT</title>
+</head>
+<body>
+<h2>Enter some text to ROT13</h2>
+<form method="post">
+    <textarea aria-label="Some text" name="text" rows="4" cols="50"
+        style="text-align:left; overflow:auto; border:1px outset #000000;">
+        {% if text %}
+            {{ text }}
+        {% endif %}
+    </textarea>
+    <br>
+    <button>Submit</button>
+</form>
+</body>
+</html>

@@ -1,4 +1,5 @@
 from util import *
+import rot13
 
 print(month_abbvs)
 
@@ -35,3 +36,6 @@ print escape_html("&")
 print escape_html("&=&amp;")
 
 fizzbuzz(100)
+
+print rot13.doRot13("hello world")
+print rot13.doRot13("enter")
