@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ol>
+    {% for i in range(1, n) %}
+        {% if i % 3 == 0 and i % 5 == 0 %}
+            <li>FizzBuzz</li>
+        {% elif i % 5 == 0 %}
+            <li>Buzz</li>
+        {% elif i % 3 == 0 %}
+            <li>Fizz</li>
+        {% else %}
+            <li>{{ i }}</li>
+        {% endif %}
+    {% endfor %}
+
+</ol>
+
+
+</body>
+</html>
